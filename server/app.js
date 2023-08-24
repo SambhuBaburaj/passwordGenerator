@@ -17,7 +17,7 @@ const path=require('path')
 
 app.use(cors(
   {
-    origin:["byte-warden.vercel.app"],
+    origin:["https://byte-warden.vercel.app/"],
     methods:['POST','GET'],
 credentials:true
   }
