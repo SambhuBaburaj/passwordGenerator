@@ -14,13 +14,14 @@ var indexRouter = require("./routes/index");
 var app = express();
 const path = require("path");
 
-app.use(
-  cors({
-    origin: ["https://password-generator-front.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: 'https://password-generator-front.vercel.app', // Replace with your frontend's URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you need to handle cookies or authentication
+  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 200
+};
+
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
