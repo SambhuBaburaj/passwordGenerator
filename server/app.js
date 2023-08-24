@@ -15,11 +15,7 @@ var app = express();
 const path = require("path");
 
 app.use(
-  cors({
-    origin: ["https://password-generator-front.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
+  cors()
 );
 app.use(logger("dev"));
 app.use(express.json());
