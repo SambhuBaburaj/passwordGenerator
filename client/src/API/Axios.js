@@ -1,6 +1,6 @@
 import axios from "axios"
 // const baseURL='http://localhost:8000'
-const baseURL='https://byte-warden.vercel.app/'
+const baseURL='https://password-generatorserver.vercel.app/'
 
 const Instance=axios.create({baseURL})
 

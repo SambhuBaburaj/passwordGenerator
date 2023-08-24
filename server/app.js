@@ -17,7 +17,7 @@ const path=require('path')
 
 app.use(cors(
   {
-    origin:["https://byte-warden-password-generator-an5m.vercel.app/"],
+    origin:["https://password-generatorserver.vercel.app/"],
     methods:['POST','GET'],
 credentials:true
   }
