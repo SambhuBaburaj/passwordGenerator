@@ -40,7 +40,7 @@ const corsOptions = {
 
 app.use(cors());
 
-  // app.options('*', cors(corsOptions));
+  app.options('*', cors(corsOptions));
 
 
 app.use(logger("dev"));
