@@ -13,13 +13,7 @@ router.post('/loginuser',loginHelper);
 router.post('/newpassword',JWTvarify,AddPassword);
 router.get('/getpassowrd',JWTvarify,Getpassword);
 router.get('/deletepasword',JWTvarify,DeletePass); 
-router.get('/test',(req,res)=>
-{
-    res.json(
-'hello'
 
-    )
-});
 
 module.exports = router;
  
