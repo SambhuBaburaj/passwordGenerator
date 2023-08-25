@@ -15,10 +15,10 @@ router.get('/getpassowrd',JWTvarify,Getpassword);
 router.get('/deletepasword',JWTvarify,DeletePass); 
 router.get('/test',(req,res)=>
 {
-    console.log(res.json(
+    res.json(
 'hello'
 
-    ));
+    )
 });
 
 module.exports = router;
