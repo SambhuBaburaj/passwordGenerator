@@ -18,7 +18,7 @@ const path = require("path");
 
 app.use(cors(
   {
-    origin:["https://password-generator-front.vercel.app"],
+    origin:["https://password-generator-front.vercel.app:3000"],
 
     methods:['POST','GET'],
 credentials:true
