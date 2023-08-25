@@ -16,13 +16,33 @@ const path = require("path");
 
 
 
-app.use(cors(
-  {
-    origin:["https://password-generator-front.vercel.app"],
+// app.use(cors(
+//   {
+//     origin:["https://password-generator-front.vercel.app"],
 
-    methods:['POST','GET'],
-credentials:true
-  }))
+//     methods:['POST','GET'],
+// credentials:true
+//   }))
+const allowedOrigins = [
+  'https://password-generator-front-git-main-sambhubaburaj.vercel.app',
+  // Add more allowed origins here
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
+  app.options('*', cors(corsOptions));
+
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
