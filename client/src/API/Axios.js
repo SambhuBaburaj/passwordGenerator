@@ -1,6 +1,6 @@
 import axios from "axios";
-const baseURL='http://localhost:8000'
-// const baseURL ="https://byte-server2.onrender.com";
+// const baseURL='http://localhost:8000'
+const baseURL ="https://byte-server2.onrender.com";
 
 const Instance = axios.create({ baseURL });
 
