@@ -1,17 +1,14 @@
-import axios from "axios"
+import axios from "axios";
 // const baseURL='http://localhost:8000'
-const baseURL='https://password-generator-server-git-main-sambhubaburaj.vercel.app/'
+const baseURL =
+  "https://password-generator-server-git-main-sambhubaburaj.vercel.app/";
 
-const Instance=axios.create({baseURL})
-
+const Instance = axios.create({ baseURL });
 
 Instance.interceptors.request.use(
-(config)=>
-{
-
-
+  (config) => {
     const token = localStorage.getItem("Userdata");
-  
+
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }
@@ -22,11 +19,6 @@ Instance.interceptors.request.use(
     Promise.reject(error);
     console.log(error);
   }
+);
 
-)
-
-
-
-
-
-export default Instance
+export default Instance;
